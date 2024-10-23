@@ -42,7 +42,7 @@ def calculateStandardform():
         askUsercon = input(
             "Would you like to restart this calculation with the discriminant dealt with by cmath?"
             + "\n" + "Yes or No? ")
-        if askUsercon == "Yes":
+        if askUsercon == "Yes" or askUsercon == "y":
             specialCalculatestandard(a, b, c, roundTo)
         else:
             exit()
@@ -86,7 +86,7 @@ def calculateVertexform():
         askUsercon = input(
             "Would you like to restart this calculation with the discriminant dealt with by cmath?"
             + "\n" + "Yes or No? ")
-        if askUsercon == "Yes":
+        if askUsercon == "Yes" or askUsercon == "y":
             specialCalculatevertex(a, h, k, y, roundTo)
         else:
             exit()
