@@ -3,10 +3,10 @@ import math
 
 
 def Start():
-    formChoice = input("Vertex Form or Standard Form? ").strip()
-    if formChoice == "Standard" or formChoice == "s" or formChoice == "standard":
+    formChoice = str(input("Vertex Form or Standard Form? ")).strip()
+    if formChoice == "Standard" or formChoice == "s" or formChoice == "standard" or formChoice == "Standard Form" or formChoice == "standard form":
         calculateStandardform()
-    elif formChoice == "Vertex" or formChoice == "v" or formChoice == "vertex":
+    elif formChoice == "Vertex" or formChoice == "v" or formChoice == "vertex" or formChoice == "Vertex Form" or formChoice == "vertex form":
         calculateVertexform()
     else:
         Start()
@@ -61,7 +61,7 @@ def calculateStandardform():
 
 def calculateVertexform():
     try:
-        print("Please make sure the equation you are gathering A, B, and C are in a(x-h)^2+k=y, and also seperate your inputs by using a comma and a space.")
+        print("Please make sure the equation you are gathering A, B, and C are in a(x+h)^2+k=y, and also seperate your inputs by using a comma and a space.")
     except ValueError:
         calculateVertexform()
         return
