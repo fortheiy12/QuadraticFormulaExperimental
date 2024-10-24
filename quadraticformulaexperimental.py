@@ -22,6 +22,7 @@ def contFunc():
 
 
 def calculateStandardform():
+    inequalityPresent = ""
     print("Please make sure the equation you are gathering A, B, and C are in ax^2+bx+c=0, and also seperate your inputs by using a comma and a space.")
     try:
         a, b, c = input("A, B, C ").split(", ")
@@ -29,6 +30,19 @@ def calculateStandardform():
         calculateStandardform()
         return
     roundTo = int(input("Places to round to? "))
+    inequality = input("Is the inequality greater than, less than, or equal to? ")
+    if inequality == "<=":
+        inequalityPresent = "lessThanequal"
+    elif inequality == ">=":
+        inequalityPresent = "greaterThanequal"
+    elif inequality == "<":
+        inequalityPresent = "lessThan"
+    elif inequality == ">":
+        inequalityPresent = "greaterThan"
+    elif inequality == "=":
+        inequalityPresent = "equal"
+    else:
+        return
     a = float(a)
     b = float(b)
     c = float(c)
@@ -51,9 +65,10 @@ def calculateStandardform():
     numerator2 = firstpart - sqrted
     sum1 = numerator1 / denomintor
     sum2 = numerator2 / denomintor
-    print("Answer 1: " + str(round(sum1, roundTo)))
+    
+    print("Answer 1: " + str(round(sum1, roundTo)) + inequalityPresent)
     if sum2 != sum1 or sum2 == 0:
-        print("Answer 2: " + str(round(sum2, roundTo)))
+        print("Answer 2: " + str(round(sum2, roundTo)) + inequalityPresent)
         contFunc()
     else:
         contFunc()
@@ -67,7 +82,19 @@ def calculateVertexform():
         return
     a, h, k, y = input("A, H, K, Y ").split(", ")
     roundTo = int(input("Places to round to? "))
-
+    inequality = input("Is the inequality greater than, less than, or equal to? ")
+    if inequality == "<=":
+        inequalityPresent = "lessThanequal"
+    elif inequality == ">=":
+        inequalityPresent = "greaterThanequal"
+    elif inequality == "<":
+        inequalityPresent = "lessThan"
+    elif inequality == ">":
+        inequalityPresent = "greaterThan"
+    elif inequality == "=":
+        inequalityPresent = "equal"
+    else:
+        return
     a = float(a)
     h = float(h)
     k = float(k)
@@ -98,9 +125,9 @@ def calculateVertexform():
     else:
         root1 = root1 - h
         root2 = root2 - h
-        print("Answer 1: " + str(round(root1, roundTo)))
+        print("Answer 1: " + str(round(root1, roundTo)) + inequalityPresent)
         if root2 != root1:
-            print("Answer 2: " + str(round(root2, roundTo)))
+            print("Answer 2: " + str(round(root2, roundTo)) + inequalityPresent)
             contFunc()
         else:
             contFunc()
