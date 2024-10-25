@@ -23,24 +23,27 @@ def contFunc():
 
 def calculateStandardform():
     inequalityPresent = ""
-    print("Please make sure the equation you are gathering A, B, and C are in ax^2+bx+c=0, and also seperate your inputs by using a comma and a space.")
+    print(
+        "Please make sure the equation you are gathering A, B, and C are in ax^2+bx+c=0, and also seperate your inputs by using a comma and a space."
+    )
     try:
         a, b, c = input("A, B, C ").split(", ")
     except ValueError:
         calculateStandardform()
         return
     roundTo = int(input("Places to round to? "))
-    inequality = input("Is the inequality greater than, less than, or equal to? ")
-    if inequality == "<=":
-        inequalityPresent = "lessThanequal"
-    elif inequality == ">=":
-        inequalityPresent = "greaterThanequal"
-    elif inequality == "<":
-        inequalityPresent = "lessThan"
-    elif inequality == ">":
-        inequalityPresent = "greaterThan"
-    elif inequality == "=":
-        inequalityPresent = "equal"
+    inequality = input(
+        "Is the inequality greater than, less than, or equal to? ")
+    if inequality == "<=" or inequality == "less than or equal to":
+        inequalityPresent = "<="
+    elif inequality == ">=" or inequality == "greater than or equal to":
+        inequalityPresent = ">="
+    elif inequality == "<" or inequality == "less than":
+        inequalityPresent = "<"
+    elif inequality == ">" or inequality == "greater than":
+        inequalityPresent = ">"
+    elif inequality == "=" or inequality == "equal to":
+        inequalityPresent = "="
     else:
         return
     a = float(a)
@@ -65,7 +68,7 @@ def calculateStandardform():
     numerator2 = firstpart - sqrted
     sum1 = numerator1 / denomintor
     sum2 = numerator2 / denomintor
-    
+
     print("Answer 1: " + str(round(sum1, roundTo)) + inequalityPresent)
     if sum2 != sum1 or sum2 == 0:
         print("Answer 2: " + str(round(sum2, roundTo)) + inequalityPresent)
@@ -76,23 +79,26 @@ def calculateStandardform():
 
 def calculateVertexform():
     try:
-        print("Please make sure the equation you are gathering A, B, and C are in a(x+h)^2+k=y, and also seperate your inputs by using a comma and a space.")
+        print(
+            "Please make sure the equation you are gathering A, B, and C are in a(x+h)^2+k=y, and also seperate your inputs by using a comma and a space."
+        )
     except ValueError:
         calculateVertexform()
         return
     a, h, k, y = input("A, H, K, Y ").split(", ")
     roundTo = int(input("Places to round to? "))
-    inequality = input("Is the inequality greater than, less than, or equal to? ")
-    if inequality == "<=":
-        inequalityPresent = "lessThanequal"
-    elif inequality == ">=":
-        inequalityPresent = "greaterThanequal"
-    elif inequality == "<":
-        inequalityPresent = "lessThan"
-    elif inequality == ">":
-        inequalityPresent = "greaterThan"
-    elif inequality == "=":
-        inequalityPresent = "equal"
+    inequality = input(
+        "Is the inequality greater than, less than, or equal to? ")
+    if inequality == "<=" or inequality == "less than or equal to":
+        inequalityPresent = "<="
+    elif inequality == ">=" or inequality == "greater than or equal to":
+        inequalityPresent = ">="
+    elif inequality == "<" or inequality == "less than":
+        inequalityPresent = "<"
+    elif inequality == ">" or inequality == "greater than":
+        inequalityPresent = ">"
+    elif inequality == "=" or inequality == "equal to":
+        inequalityPresent = "="
     else:
         return
     a = float(a)
@@ -127,7 +133,8 @@ def calculateVertexform():
         root2 = root2 - h
         print("Answer 1: " + str(round(root1, roundTo)) + inequalityPresent)
         if root2 != root1:
-            print("Answer 2: " + str(round(root2, roundTo)) + inequalityPresent)
+            print("Answer 2: " + str(round(root2, roundTo)) +
+                  inequalityPresent)
             contFunc()
         else:
             contFunc()
